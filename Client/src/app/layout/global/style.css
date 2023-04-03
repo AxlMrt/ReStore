@@ -1,0 +1,13 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --heroBanner: #f0e0ff;
+  --globalBlue: #8cd0e3;
+
+}

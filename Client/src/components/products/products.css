@@ -1,0 +1,35 @@
+.card {
+  width: 21.875rem;
+}
+
+.card > img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.card_title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.card_title > h3 {
+  cursor: pointer;
+}
+
+.card_btn {
+  width: 100%;
+  background: var(--globalBlue);
+  padding: .6rem 0;
+  border: none;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: all .5s ease-out;
+  opacity: 0;
+}
+
+.card:hover .card_btn {
+  opacity: 1;
+  transition: all .1 ease-in;
+  cursor: pointer;
+}
