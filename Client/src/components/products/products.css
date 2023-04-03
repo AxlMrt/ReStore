@@ -13,7 +13,13 @@
 }
 
 .card_title > h3 {
+  font-weight: 500;
   cursor: pointer;
+}
+
+.card_title > span {
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .card_btn {

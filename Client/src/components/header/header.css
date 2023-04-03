@@ -5,12 +5,25 @@ header {
   padding: 1.5rem 3rem;
 }
 
-nav > ul {
+nav {
   display: flex;
   gap: 1rem;
 }
 
-nav > ul > li {
-  list-style: none;
+nav > a {
+  text-decoration: none;
+  color: inherit;
   cursor: pointer;
+}
+
+header > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+header > div > a {
+  text-decoration: none;
+  color: inherit;
 }

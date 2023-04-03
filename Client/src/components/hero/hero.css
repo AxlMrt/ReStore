@@ -1,31 +1,37 @@
 .hero {
   width: 100%;
-  height: 100vh;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   background: var(--heroBanner);
-  padding: 0 3.5rem;
+  padding: 3rem 3.5rem 0 3.5rem;
 }
+
+.hero img {
+  width: 200px;
+}
+
 
 .hero_banner {
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
 .hero_banner > span {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: calc(3500vw / 1018);
 }
 
 .hero_banner h2,
 .hero_banner h3 {
-  font-size: 4rem;
+  font-weight: 500;
+  font-size: calc(8000vw / 1018)
 }
 
 .hero_banner > div {
-  margin-top: 3rem;
+  margin: 1rem 0;
 }
 
 .btn41-43 {
@@ -72,4 +78,38 @@
 
 .btn-41:active {
   top: 2px;
+}
+
+@media screen and (min-width: 769px) {
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .hero_banner {
+    align-items: start;
+  }
+
+  .hero img {
+    width: 280px;
+  }
+
+  .hero_banner > div {
+    margin: 2.5rem 0;
+  }
+
+  .hero_banner > span {
+    font-size: calc(2500vw / 1018);
+  }
+
+  .hero_banner h2,
+  .hero_banner h3 {
+    font-size: calc(6000vw / 1018)
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero img {
+    width: 400px;
+  }
 }
