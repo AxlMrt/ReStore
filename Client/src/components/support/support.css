@@ -1,0 +1,26 @@
+.support {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4rem 0;
+  gap: 2rem;
+}
+
+.support > div {
+  display: flex;
+  align-items: flex-end;
+  line-height: 1.2;
+  gap: 1rem;
+}
+
+.support h4 {
+  font-weight: 500;
+}
+
+.support p {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (min-width: 769px) {
+
+}

@@ -2,22 +2,31 @@
   width: 21.875rem;
 }
 
-.card > img {
+.card_img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  background: rgba(128, 128, 128, 0.1);
+}
+
+.card_img > img {
   width: 100%;
-  cursor: pointer;
 }
 
-.card_title {
+.card_desc {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
-.card_title > h3 {
+.card_desc > a {
+  text-decoration: none;
+  color: inherit;
   font-weight: 500;
-  cursor: pointer;
 }
 
-.card_title > span {
+.card_desc > p {
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -25,11 +34,12 @@
 .card_btn {
   width: 100%;
   background: var(--globalBlue);
-  padding: .6rem 0;
   border: none;
+  padding: .5rem;
+  margin-top: 1rem;
   font-size: 1.5rem;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   transition: all .5s ease-out;
   opacity: 0;
 }
