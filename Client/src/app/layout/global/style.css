@@ -12,8 +12,39 @@
   --heroBanner: #f0e0ff;
   --globalBlue: #8cd0e3;
   --price: rgba(255, 0, 0, 0.6);
+  --error: rgba(255, 0, 0, 0.2);
+  --lightgrey: #f3f3f3;
+  --loadBlack: #383636;
 }
 
 html {
   font-family: 'Poppins', sans-serif;
+}
+
+/*Loading component*/
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid var(--lightgrey);
+  border-top: 10px solid var(--loadBlack);
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
 }

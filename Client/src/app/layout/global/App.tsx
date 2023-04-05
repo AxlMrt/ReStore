@@ -1,15 +1,17 @@
-import Home from '../home/Home.js';
-import Header from '../../../components/header/Header.js';
-import './style.css';
-import { Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import Header from "../../../components/header/Header.js";
+import "react-toastify/dist/ReactToastify.css";
+import "./style.css";
 
 function App() {
-	return (
-		<main className='App'>
-			<Header />
-			<Outlet />
-		</main>
-	);
+  return (
+    <main className="App">
+      <ToastContainer position="bottom-right" hideProgressBar theme="colored" />
+      <Header />
+      <Outlet />
+    </main>
+  );
 }
 
 export default App;

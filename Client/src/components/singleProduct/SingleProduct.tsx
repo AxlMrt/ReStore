@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Product } from '../../app/models/product';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import agent from '../../app/api/agent';
+import NotFound from '../../app/errors/NotFound';
 import './singleProduct.css';
+import LoadingComponent from '../../app/layout/global/LoadingComponent';
 
 export default function SingleProduct() {
 	const { id } = useParams<{ id: string }>();
@@ -10,15 +12,14 @@ export default function SingleProduct() {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		axios
-			.get(`http://localhost:5000/api/products/${id}`)
-			.then((response) => setProduct(response.data))
+		id && agent.Collection.details(parseInt(id))
+			.then((response) => setProduct(response))
 			.catch((error) => console.log(error))
 			.finally(() => setLoading(false));
 	}, [id]);
 
-	if (loading) return <h3>Loading...</h3>;
-	if (!product) return <h3>Product not found</h3>
+	if (loading) return <LoadingComponent message='Loading product...' />;
+	if (!product) return <NotFound />
 
 	return (
 		<div className='product'>

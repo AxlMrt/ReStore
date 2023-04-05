@@ -1,0 +1,37 @@
+.error_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error_container > h2 {
+  font-weight: 500;
+}
+
+.error_btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3rem 0;
+  gap: 1.5rem;
+}
+
+.error_btn > button {
+  padding: .8rem 2rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.validation_error {
+  width: 90%;
+  padding: 1rem 2rem;
+  background: var(--error);
+}
+
+.validation_error > h1 {
+  font-weight: 500;
+  text-align: center;
+}
