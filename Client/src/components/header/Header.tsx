@@ -35,9 +35,9 @@ export default function Header() {
 				</div>
 				<div>
 					<div className='cart'>
-						<div className='cart_icon'>
+						<Link to="/cart" className='cart_icon'>
 							<BiCart size={25} />
-						</div>
+						</Link>
 						<div className='cart_num'>
 							<span>4</span>
 						</div>

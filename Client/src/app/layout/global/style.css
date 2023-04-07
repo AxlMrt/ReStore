@@ -12,10 +12,11 @@
   --banner: rgba(128, 128, 128, 0.1);
   --heroBanner: #f0e0ff;
   --globalBlue: #8cd0e3;
-  --price: rgba(255, 0, 0, 0.6);
-  --error: rgba(255, 0, 0, 0.2);
   --lightgrey: #f3f3f3;
   --loadBlack: #383636;
+  --cartBorder: rgba(128, 128, 128, 0.2);
+  --price: rgba(255, 0, 0, 0.6);
+  --error: rgba(255, 0, 0, 0.2);
 }
 
 html {
