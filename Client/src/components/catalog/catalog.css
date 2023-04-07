@@ -18,8 +18,8 @@
     height: 2px;
     position: absolute;
     top: 1.3rem;
-    left: -6.25rem;
-    width: 5rem;
+    left: -3.8rem;
+    width: 3rem;
 }
 
 .catalog > h2:after {
@@ -28,8 +28,8 @@
     height: 2px;
     position: absolute;
     top: 1.3rem;
-    left: 13.75rem;
-    width: 5rem;
+    left: 13.3rem;
+    width: 3rem;
 }
 
 .products_filter {
@@ -56,4 +56,26 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+}
+
+@media screen and (min-width: 769px) {
+  .catalog > h2:before {
+    background-color: #000;
+    content: "";
+    height: 2px;
+    position: absolute;
+    top: 1.3rem;
+    left: -6.25rem;
+    width: 5rem;
+}
+
+.catalog > h2:after {
+    background-color: #000;
+    content: "";
+    height: 2px;
+    position: absolute;
+    top: 1.3rem;
+    left: 13.75rem;
+    width: 5rem;
+}
 }

@@ -14,10 +14,10 @@ export default function Catalog() {
 			.then(products => setProducts(products))
 			.catch((error) => console.log(error))
 			.finally(() => setLoading(false));
-			
 	}, []);
 
 	if (loading) return <LoadingComponent />
+
 	return (
 		<div className='catalog'>
 			<h2>Daily deals!</h2>

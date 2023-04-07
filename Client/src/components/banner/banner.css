@@ -1,0 +1,16 @@
+.banner {
+  width: 100%;
+  background: var(--banner);
+  padding: 2rem 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.banner > h4 {
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.banner  span {
+  font-weight: 500;
+}
