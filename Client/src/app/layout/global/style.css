@@ -17,6 +17,13 @@
   --cartBorder: rgba(128, 128, 128, 0.2);
   --price: rgba(255, 0, 0, 0.6);
   --error: rgba(255, 0, 0, 0.2);
+  /*Register*/
+  --bg: #f0f2f5;
+  --text: #606770;
+  --borderTitle: #dadde1;
+  --borderInput: #ccd0d5;
+  --submit: #00a400;
+  --submitHover: #46aa31;
 }
 
 html {

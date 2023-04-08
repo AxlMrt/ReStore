@@ -3,6 +3,7 @@ import { Basket } from '../../app/models/basket'
 import agent from '../../app/api/agent';
 import LoadingComponent from '../../app/layout/global/LoadingComponent';
 import './basket.css'
+import Quantity from '../quantity-btn/Quantity';
 
 export default function Basket() {
   const [basket, setBasket] = useState<Basket | null>(null);
@@ -36,7 +37,9 @@ export default function Basket() {
             <td><img src={cart.pictureUrl} alt="product-image" /></td>
             <td>{cart.name}</td>
             <td>{(cart.price / 100).toFixed(2)}$</td>
-            <td>{cart.quantity}</td>
+            <td>
+              <Quantity qty={cart.quantity} />
+            </td>
             <td>{((cart.price * cart.quantity) / 100 ).toFixed(2)}$</td>
             <td>X</td>
           </tr>

@@ -1,0 +1,48 @@
+.quantity_btn {
+  display: inline-block;
+  height: 40px;
+  padding: 0;
+  position: relative;
+  width: 110px;
+}
+
+.quantity_btn input {
+  color: #333;
+    float: left;
+    font-size: 14px;
+    height: 40px;
+    margin: 0;
+    width: 110px;
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid #e1e1e1;
+    padding: 0;
+    text-align: center;
+}
+
+.decrease {
+  border-right: 1px solid #e5e5e5;
+    height: 40px;
+    left: 0;
+    padding-top: 8px;
+}
+
+.increase {
+  border-left: 1px solid #e5e5e5;
+    height: 40px;
+    padding-top: 9px;
+    right: 0;
+    top: 0;
+}
+
+.qty_btn {
+  color: #333;
+    cursor: pointer;
+    float: inherit;
+    font-size: 16px;
+    margin: 0;
+    position: absolute;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    width: 20px;
+    text-align: center;
+}

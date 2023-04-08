@@ -19,7 +19,9 @@ export default function Banner({ id }: Props) {
       <span>Server error</span>
     ) : path === "/cart" ? (
       <span>Cart</span>
-    ) : (
+    ) : path === "/register" ? (
+      <span>Register</span>
+    ) :(
       <span>Not-found</span>
     );
   return (
