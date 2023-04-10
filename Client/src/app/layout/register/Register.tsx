@@ -1,10 +1,9 @@
-import Banner from '../../../components/banner/Banner'
+import Banner from "../../../components/banner/Banner";
 
-import { useState, useRef } from 'react';
-import './register.css';
+import { useState, useRef } from "react";
+import "./register.css";
 
 export default function Register() {
-
   const [checked, setChecked] = useState(false);
   const firstNameRef = useRef();
   const lastNameRef = useRef();
@@ -31,7 +30,7 @@ export default function Register() {
       lastName,
       email,
       password,
-      birth: new Date(year, month, day)
+      birth: new Date(year, month, day),
     };
   };
 
@@ -46,18 +45,18 @@ export default function Register() {
 
   const monthList = () => {
     const months = [
-      'january',
-      'february',
-      'march',
-      'april',
-      'may',
-      'june',
-      'july',
-      'august',
-      'september',
-      'october',
-      'november',
-      'december'
+      "january",
+      "february",
+      "march",
+      "april",
+      "may",
+      "june",
+      "july",
+      "august",
+      "september",
+      "october",
+      "november",
+      "december",
     ];
 
     return Array.from(new Array(12), (value, index) => (
@@ -77,7 +76,7 @@ export default function Register() {
   };
 
   const pronounList = () => {
-    const pronoun = ['She', 'He', 'Neutral'];
+    const pronoun = ["She", "He", "Neutral"];
     return Array.from(new Array(3), (value, index) => (
       <option key={pronoun[index] + index} value={pronoun[index]}>
         {pronoun[index]}
@@ -86,13 +85,10 @@ export default function Register() {
   };
 
   return (
-    <section className='register'>
+    <section className="register">
       <Banner />
-      <div className='overlay'>
-
-        <div
-          className="modal_container"
-          id="modal">
+      <div className="overlay">
+        <div className="modal_container" id="modal">
           <div className="modal_header">
             <div className="modal_title">
               <h3>Registering</h3>

@@ -4,15 +4,18 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import agent from "../../app/api/agent";
 import "./products.css";
+import { useStoreContext } from "../../app/context/StoreContext";
 
 interface Props {
   product: Product;
 }
 
 export default function Products({ product }: Props) {
+  const { setBasket } = useStoreContext();
 
   function handleAddItem(productId: number) {
     agent.Basket.addItem(productId)
+      .then((basket) => setBasket(basket))
       .catch((error) => console.log(error))
     toast.success("Added to the cart!");
   }

@@ -2,5 +2,20 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 6rem 0;
+  flex-direction: column;
+  padding: 6rem 5%;
+  gap: 2rem;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media screen and (min-width: 769px) {
+  .summary {
+    flex-direction: row;
+  }
 }

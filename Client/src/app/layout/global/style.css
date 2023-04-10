@@ -30,6 +30,10 @@ html {
   font-family: 'Poppins', sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*Loading component*/
 
 @keyframes spinner {
