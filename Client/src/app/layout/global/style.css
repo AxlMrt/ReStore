@@ -24,6 +24,8 @@
   --borderInput: #ccd0d5;
   --submit: #00a400;
   --submitHover: #46aa31;
+  /*shadow*/
+  --shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%);
 }
 
 html {

@@ -1,11 +1,13 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BiCart } from 'react-icons/bi';
 import { useStoreContext } from '../../app/context/StoreContext';
 import './header.css';
 
 export default function Header() {
-	const { basket } = useStoreContext();
-	const itemCount = basket?.items.reduce((sum, item) => sum + item.quantity, 0);
+  const { basket } = useStoreContext();
+  const [scroll, setScroll] = useState<boolean>(false);
+	const itemCount: number | undefined = basket?.items.reduce((sum, item) => sum + item.quantity, 0);
 	
 	const navLinks = [
 		{ title: 'Home', path: '/' },
@@ -15,8 +17,14 @@ export default function Header() {
     { title: 'Login', path: '/login' },
 	];
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 50);
+    })
+  }, []);
+
 	return (
-    <header>
+    <header className={scroll ? 'scrolling' : ''}>
       <input id="menu__toggle" type="checkbox" />
       <label className="menu__btn" htmlFor="menu__toggle">
         <span></span>

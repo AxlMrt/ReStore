@@ -1,5 +1,5 @@
 import Banner from "../../../components/banner/Banner";
-
+import ValidButton from "../../../components/buttons/valid-btn/ValidButton";
 import { useState, useRef } from "react";
 import "./register.css";
 
@@ -187,9 +187,7 @@ export default function Register() {
               </div>
             </div>
 
-            <button type="submit" id="submitBtn" className="register_btn">
-              Register
-            </button>
+            <ValidButton href="" message="Register" />
           </form>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { Basket } from "../../app/models/basket";
 import { TiDelete } from "react-icons/ti";
 import { useStoreContext } from "../../app/context/StoreContext";
-import Quantity from "../quantity-btn/Quantity";
+import Quantity from "../buttons/quantity-btn/Quantity";
 import agent from "../../app/api/agent";
 import "./basket.css";
 

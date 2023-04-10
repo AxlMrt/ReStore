@@ -1,4 +1,4 @@
-import React from 'react'
+import ValidButton from '../buttons/valid-btn/ValidButton';
 import './basket.css'
 
 export default function BasketCoupon() {
@@ -8,10 +8,10 @@ export default function BasketCoupon() {
 
       <div className='coupon'>
         <h5>Enter your coupon code if you have one</h5>
-        <input type="text" />
+        <input type="text" placeholder='Your coupon code'/>
       </div>
 
-      <a href="">Apply Coupon</a>
+      <ValidButton href="" message="Apply Coupon" />
     </div>
   );
 }

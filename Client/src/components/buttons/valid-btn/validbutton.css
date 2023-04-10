@@ -1,0 +1,12 @@
+.validbtn {
+    background: var(--submit);
+    border-radius: 3rem;
+    color: #fff;
+    display: block;
+    font-size: .9rem;
+    font-weight: 500;
+    line-height: 1;
+    padding: 1.125rem .625rem ;
+    text-align: center;
+    text-transform: uppercase;
+}
