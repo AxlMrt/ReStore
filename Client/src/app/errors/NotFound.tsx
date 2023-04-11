@@ -5,7 +5,7 @@ import "./servererror.css";
 export default function NotFound() {
   return (
     <section>
-      <Banner id={null} />
+      <Banner name="Not found" />
       <div className="server_error">
         <h3>Oops, we could not find what you are looking for.</h3>
         <Link to="/collection">Go back to shopping</Link>

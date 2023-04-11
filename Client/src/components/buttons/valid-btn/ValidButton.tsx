@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './validbutton.css'
 
 interface Props {
@@ -6,5 +7,5 @@ interface Props {
 }
 
 export default function ValidButton({href, message}: Props) {
-  return <a href={href} className='validbtn'>{message}</a>;
+  return <Link to={href} className='validbtn'>{message}</Link>;
 }

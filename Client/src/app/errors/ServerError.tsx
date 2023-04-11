@@ -7,7 +7,7 @@ export default function ServerError() {
 
   return (
     <section>
-      <Banner id={null} />
+      <Banner name="Server-error" />
       <div className="server_error">
         {state?.error ? (
           <div className="server_error">

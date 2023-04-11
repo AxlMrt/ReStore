@@ -1,32 +1,17 @@
+import { useParams } from "react-router-dom";
 import "./banner.css";
 
 interface Props {
-  id?: number;
+  name: string;
 }
-export default function Banner({ id }: Props) {
-  const path = location.pathname;
 
-  const name =
-    path === "/collection" ? (
-      <span>Shop</span>
-    ) : path === `/collection/${id}` ? (
-      <span>Shop Product</span>
-    ) : path === "/about" ? (
-      <span>About</span>
-    ) : path === "/contact" ? (
-      <span>Contact</span>
-    ) : path === "/server-error" ? (
-      <span>Server error</span>
-    ) : path === "/cart" ? (
-      <span>Cart</span>
-    ) : path === "/register" ? (
-      <span>Register</span>
-    ) :(
-      <span>Not-found</span>
-    );
+export default function Banner({ name }: Props) {
+  
   return (
     <div className="banner">
-      <h4>Home / {name}</h4>
+      <h4>
+        Home / <span>{name}</span>
+      </h4>
     </div>
   );
 }

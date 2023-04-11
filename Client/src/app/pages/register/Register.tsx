@@ -86,7 +86,7 @@ export default function Register() {
 
   return (
     <section className="register">
-      <Banner />
+      <Banner name="Register" />
       <div className="overlay">
         <div className="modal_container" id="modal">
           <div className="modal_header">

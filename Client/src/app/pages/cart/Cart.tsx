@@ -7,7 +7,7 @@ import BasketCoupon from '../../../components/basket/BasketCoupon';
 export default function Basket() {
   return (
     <section>
-      <Banner />
+      <Banner name="Cart" />
       <div className="basket">
         <BasketTable />
         <div className='summary'>

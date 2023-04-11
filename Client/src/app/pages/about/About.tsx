@@ -13,7 +13,7 @@ export default function About() {
   }
   return (
     <section>
-      <Banner id={undefined} />
+      <Banner name="About" />
       <div className="error_container">
         <h2>Errors for testing puposes</h2>
         <div className="error_btn">

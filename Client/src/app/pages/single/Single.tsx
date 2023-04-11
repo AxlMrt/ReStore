@@ -24,7 +24,7 @@ export default function Single() {
   if (!product) return <NotFound />;
   return (
     <section>
-      <Banner id={ id } />
+      <Banner name={product.name} />
       <SingleProduct product={product} />
     </section>
   );

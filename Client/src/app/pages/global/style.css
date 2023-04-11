@@ -9,7 +9,7 @@
 }
 
 :root {
-  --banner: rgba(128, 128, 128, 0.1);
+  --banner: #f7f7f7;
   --heroBanner: #f0e0ff;
   --globalBlue: #8cd0e3;
   --lightgrey: #f3f3f3;
