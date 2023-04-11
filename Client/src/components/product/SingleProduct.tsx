@@ -1,20 +1,18 @@
-import "./singleProduct.css";
 import { Product } from "../../app/models/product";
 import { useEffect, useState } from "react";
-import { useStoreContext } from "../../app/context/StoreContext";
-import { useParams } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
+import {  addBasketItemAsync, removeBasketItemAsync } from "../basket/basketSlice";
 import Quantity from "../buttons/quantity-btn/Quantity";
-import agent from "../../app/api/agent";
+import "./singleProduct.css";
 
 interface Props {
   product: Product;
 }
 
 export default function SingleProduct({ product }: Props) {
-  const { basket, setBasket, removeItem } = useStoreContext();
-  const { id } = useParams<{ id: string }>();
+  const { basket } = useAppSelector((state) => state.basket);
+  const dispatch = useAppDispatch();
   const [quantity, setQuantity] = useState(0);
-  const [submitting, setSubmitting] = useState(false);
 
   const item = basket?.items.find((i) => i.productId === product?.id);
   useEffect(() => {
@@ -22,19 +20,12 @@ export default function SingleProduct({ product }: Props) {
   }, [item]);
 
   function handleUpdateCart() {
-    setSubmitting(true);
     if (!item || quantity > item.quantity) {
       const updatedQuantity = item ? quantity - item.quantity : quantity;
-      agent.Basket.addItem(product?.id!, updatedQuantity)
-        .then((basket) => setBasket(basket))
-        .catch((error) => console.log(error))
-        .finally(() => setSubmitting(false));
+      dispatch(addBasketItemAsync({ productId: product.id, quantity: updatedQuantity }));
     } else {
       const updatedQuantity = item.quantity - quantity;
-      agent.Basket.removeItem(product?.id, updatedQuantity)
-        .then(() => removeItem(product?.id, updatedQuantity))
-        .catch((error) => console.log(error))
-        .finally(() => setSubmitting(false));
+      dispatch(removeBasketItemAsync({ productId: product.id, quantity: updatedQuantity }));
     }
   }
 

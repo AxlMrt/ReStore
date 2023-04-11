@@ -1,25 +1,25 @@
 import { Basket } from "../../app/models/basket";
 import { TiDelete } from "react-icons/ti";
-import { useStoreContext } from "../../app/context/StoreContext";
+import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
+import {
+  addBasketItemAsync,
+  removeBasketItemAsync,
+} from "./basketSlice";
 import Quantity from "../buttons/quantity-btn/Quantity";
-import agent from "../../app/api/agent";
 import "./basket.css";
 
 export default function Basket() {
-  const { basket, setBasket, removeItem } = useStoreContext();
+  const { basket } = useAppSelector((state) => state.basket);
+  const dispatch = useAppDispatch();
 
   function handleAddItem(productId: number) {
-    agent.Basket.addItem(productId)
-      .then((basket) => setBasket(basket))
-      .catch((error) => console.log(error));
+    dispatch(addBasketItemAsync({ productId }));
   }
 
   function handleRemoveItem(productId: number, quantity: number = 1) {
-    agent.Basket.removeItem(productId, quantity)
-      .then(() => removeItem(productId, quantity))
-      .catch((error) => console.log(error));
+    dispatch(removeBasketItemAsync({ productId, quantity }));
   }
-  
+
   if (basket?.items.length === 0) return <h3>Your basket is empty</h3>;
 
   return (
@@ -53,7 +53,12 @@ export default function Basket() {
               </td>
               <td>{((cart.price * cart.quantity) / 100).toFixed(2)}$</td>
               <td>
-                <TiDelete size={25} onClick={() => handleRemoveItem(cart.productId, cart.quantity)}/>
+                <TiDelete
+                  size={25}
+                  onClick={() =>
+                    handleRemoveItem(cart.productId, cart.quantity)
+                  }
+                />
               </td>
             </tr>
           ))}

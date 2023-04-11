@@ -1,22 +1,19 @@
 import { Link } from "react-router-dom";
 import { Product } from "../../app/models/product";
-import { useState } from "react";
 import { toast } from "react-toastify";
-import agent from "../../app/api/agent";
+import { useAppDispatch } from "../../app/store/configureStore";
+import { addBasketItemAsync } from "../basket/basketSlice";
 import "./products.css";
-import { useStoreContext } from "../../app/context/StoreContext";
 
 interface Props {
   product: Product;
 }
 
 export default function Products({ product }: Props) {
-  const { setBasket } = useStoreContext();
+  const dispatch = useAppDispatch();
 
-  function handleAddItem(productId: number) {
-    agent.Basket.addItem(productId)
-      .then((basket) => setBasket(basket))
-      .catch((error) => console.log(error))
+  function handleAddItem() {
+    dispatch(addBasketItemAsync({ productId: product.id }));
     toast.success("Added to the cart!");
   }
 
@@ -24,8 +21,8 @@ export default function Products({ product }: Props) {
     <div className="card">
       <div className="card_img">
         <img src={product.pictureUrl} alt="product" />
-        <button className="card_btn" onClick={() => handleAddItem(product.id)}>
-					Add to cart
+        <button className="card_btn" onClick={() => handleAddItem()}>
+          Add to cart
         </button>
       </div>
       <div className="card_desc">

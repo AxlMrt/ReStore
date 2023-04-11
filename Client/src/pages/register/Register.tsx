@@ -1,5 +1,5 @@
-import Banner from "../../../components/banner/Banner";
-import ValidButton from "../../../components/buttons/valid-btn/ValidButton";
+import Banner from "../../components/banner/Banner";
+import ValidButton from "../../components/buttons/valid-btn/ValidButton";
 import { useState, useRef } from "react";
 import "./register.css";
 

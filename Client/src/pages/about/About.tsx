@@ -1,6 +1,6 @@
 import { useState } from "react";
-import agent from "../../api/agent";
-import Banner from "../../../components/banner/Banner";
+import agent from "../../app/api/agent";
+import Banner from "../../components/banner/Banner";
 import "./about.css";
 
 export default function About() {

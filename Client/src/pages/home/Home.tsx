@@ -1,6 +1,6 @@
-import Catalog from '../../../components/catalog/Catalog';
-import Hero from '../../../components/hero/Hero';
-import Support from '../../../components/support/Support';
+import Catalog from '../../components/catalog/Catalog';
+import Hero from '../../components/hero/Hero';
+import Support from '../../components/support/Support';
 import './home.css'
 
 export default function Home() {

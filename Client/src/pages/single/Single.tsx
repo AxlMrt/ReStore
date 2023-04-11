@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Banner from "../../../components/banner/Banner";
-import agent from "../../api/agent";
-import NotFound from "../../errors/NotFound";
-import { Product } from "../../models/product";
-import LoadingComponent from "../global/LoadingComponent";
-import SingleProduct from "../../../components/product/SingleProduct";
+import { Product } from "../../app/models/product";
+import Banner from "../../components/banner/Banner";
+import agent from "../../app/api/agent";
+import NotFound from "../../app/errors/NotFound";
+import LoadingComponent from "../../app/global/LoadingComponent";
+import SingleProduct from "../../components/product/SingleProduct";
 
 export default function Single() {
   const { id } = useParams<{ id: string }>();

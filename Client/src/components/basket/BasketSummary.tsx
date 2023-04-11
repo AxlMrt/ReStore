@@ -1,9 +1,10 @@
-import { useStoreContext } from "../../app/context/StoreContext";
+import { useAppSelector } from "../../app/store/configureStore";
 import ValidButton from "../buttons/valid-btn/ValidButton";
 import "./basket.css";
 
 export default function BasketSummary() {
-  const { basket } = useStoreContext();
+  const { basket } = useAppSelector((state) => state.basket);
+
   const count: number | undefined =
     basket?.items.reduce((item, sum) => item + sum.price * sum.quantity, 0) ??
     0;
