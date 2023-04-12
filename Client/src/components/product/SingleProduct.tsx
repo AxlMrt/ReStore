@@ -1,7 +1,10 @@
 import { Product } from "../../app/models/product";
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
-import {  addBasketItemAsync, removeBasketItemAsync } from "../basket/basketSlice";
+import {
+  addBasketItemAsync,
+  removeBasketItemAsync,
+} from "../../app/store/slice/basketSlice";
 import Quantity from "../buttons/quantity-btn/Quantity";
 import "./singleProduct.css";
 
@@ -22,10 +25,17 @@ export default function SingleProduct({ product }: Props) {
   function handleUpdateCart() {
     if (!item || quantity > item.quantity) {
       const updatedQuantity = item ? quantity - item.quantity : quantity;
-      dispatch(addBasketItemAsync({ productId: product.id, quantity: updatedQuantity }));
+      dispatch(
+        addBasketItemAsync({ productId: product.id, quantity: updatedQuantity })
+      );
     } else {
       const updatedQuantity = item.quantity - quantity;
-      dispatch(removeBasketItemAsync({ productId: product.id, quantity: updatedQuantity }));
+      dispatch(
+        removeBasketItemAsync({
+          productId: product.id,
+          quantity: updatedQuantity,
+        })
+      );
     }
   }
 
@@ -50,7 +60,7 @@ export default function SingleProduct({ product }: Props) {
               className="btn41-43 btn-41"
               onClick={handleUpdateCart}
               style={
-                item?.quantity === quantity || !item && quantity === 0
+                item?.quantity === quantity || (!item && quantity === 0)
                   ? {
                       pointerEvents: "none",
                       background: "lightgray",

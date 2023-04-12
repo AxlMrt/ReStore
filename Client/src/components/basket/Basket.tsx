@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
 import {
   addBasketItemAsync,
   removeBasketItemAsync,
-} from "./basketSlice";
+} from "../../app/store/slice/basketSlice";
 import Quantity from "../buttons/quantity-btn/Quantity";
 import "./basket.css";
 

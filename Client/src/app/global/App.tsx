@@ -8,14 +8,14 @@ import LoadingComponent from "./LoadingComponent.js";
 import agent from "../../app/api/agent.js";
 import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
-import { setBasket } from "../../components/basket/basketSlice.js";
+import { setBasket } from "../store/slice/basketSlice.js";
 
 function App() {
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const buyerId = getCookie('buyerId');
+    const buyerId = getCookie("buyerId");
     if (buyerId) {
       agent.Basket.get()
         .then((basket) => dispatch(setBasket(basket)))
@@ -26,7 +26,7 @@ function App() {
     }
   }, [dispatch]);
 
-  if (loading) return <LoadingComponent message="Loading app..." />
+  if (loading) return <LoadingComponent message="Loading app..." />;
 
   return (
     <main className="App">
