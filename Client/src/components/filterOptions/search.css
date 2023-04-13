@@ -1,0 +1,39 @@
+.searchBar > h4 {
+  font-weight: 400;
+}
+
+.search_form {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.search_form > input {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid #e6e6e6;
+    color: #000;
+    font-size: 14px;
+    height: 43px;
+    padding: 2px 55px 2px 18px;
+}
+
+.search_form > button {
+    background: transparent none repeat scroll 0 0;
+    border: #a1a5aa;
+    border-image: none;
+    border-left: 1px solid #a1a5aa;
+    color: #000;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0 15px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    transition: all .3s ease 0s;
+}
+
+.search_form > button > svg {
+    display: inline-block;
+
+}

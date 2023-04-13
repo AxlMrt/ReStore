@@ -6,15 +6,15 @@ import './cart.css'
 
 export default function Basket() {
   return (
-    <section>
+    <>
       <Banner name="Cart" />
-      <div className="basket">
+      <main className="basket">
         <BasketTable />
-        <div className='summary'>
+        <section className='summary'>
           <BasketCoupon />
           <BasketSummary />
-        </div>
-      </div>
-    </section>
+        </section>
+      </main>
+    </>
   );
 }

@@ -32,6 +32,10 @@ html {
   font-family: 'Poppins', sans-serif;
 }
 
+main {
+  margin: 0 auto;
+}
+
 a {
   text-decoration: none;
 }

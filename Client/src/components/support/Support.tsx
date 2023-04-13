@@ -27,7 +27,7 @@ export default function Support() {
 		},
 	];
   return (
-    <div className='support'>
+    <section className='support'>
       {
         supports.map((support) => {
           return (
@@ -41,6 +41,6 @@ export default function Support() {
           )
         })
       }
-    </div>
+    </section>
   );
 }

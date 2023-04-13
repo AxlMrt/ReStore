@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Banner from "../../components/banner/Banner";
 import NotFound from "../../app/errors/NotFound";
 import LoadingComponent from "../../app/global/LoadingComponent";
-import SingleProduct from "../../components/product/SingleProduct";
+import SingleProduct from "../../components/products/product/SingleProduct";
 import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
 import {
   fetchProductAsync,

@@ -1,11 +1,11 @@
-import { Product } from "../../app/models/product";
+import { Product } from "../../../app/models/product";
 import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
+import { useAppDispatch, useAppSelector } from "../../../app/store/configureStore";
 import {
   addBasketItemAsync,
   removeBasketItemAsync,
-} from "../../app/store/slice/basketSlice";
-import Quantity from "../buttons/quantity-btn/Quantity";
+} from "../../../app/store/slice/basketSlice";
+import Quantity from "../../buttons/quantity-btn/Quantity";
 import "./singleProduct.css";
 
 interface Props {

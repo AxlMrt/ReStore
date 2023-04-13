@@ -1,17 +1,20 @@
 .card {
-  width: 21.875rem;
+  width: 17.25rem;
 }
 
 .card_img {
+  background: var(--lightgrey);
+}
+
+.card_img > a {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 2rem;
-  background: rgba(128, 128, 128, 0.1);
+  padding: 1.5rem 0 1rem 0;
 }
 
-.card_img > img {
+.card_img > a > img {
   width: 100%;
 }
 
@@ -23,11 +26,11 @@
 .card_desc > a {
   text-decoration: none;
   color: inherit;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .card_desc > p {
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 1px;
 }
 
@@ -36,7 +39,6 @@
   background: var(--globalBlue);
   border: none;
   padding: .5rem;
-  margin-top: 1rem;
   font-size: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 2px;

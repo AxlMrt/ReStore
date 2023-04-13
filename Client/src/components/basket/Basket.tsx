@@ -23,7 +23,7 @@ export default function Basket() {
   if (basket?.items.length === 0) return <h3>Your basket is empty</h3>;
 
   return (
-    <div className="table_responsive">
+    <section className="table_responsive">
       <table>
         <thead>
           <tr>
@@ -64,6 +64,6 @@ export default function Basket() {
           ))}
         </tbody>
       </table>
-    </div>
+    </section>
   );
 }

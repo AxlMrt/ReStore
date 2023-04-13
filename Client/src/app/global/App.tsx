@@ -29,11 +29,11 @@ function App() {
   if (loading) return <LoadingComponent message="Loading app..." />;
 
   return (
-    <main className="App">
+    <div className="App">
       <ToastContainer position="bottom-right" hideProgressBar theme="colored" />
       <Header />
       <Outlet />
-    </main>
+    </div>
   );
 }
 

@@ -85,112 +85,114 @@ export default function Register() {
   };
 
   return (
-    <section className="register">
+    <>
       <Banner name="Register" />
-      <div className="overlay">
-        <div className="modal_container" id="modal">
-          <div className="modal_header">
-            <div className="modal_title">
-              <h3>Registering</h3>
-            </div>
-            <p>It's fast and easy</p>
-          </div>
-          <form className="register_form" onSubmit={handleSubmit}>
-            <div className="form_names">
-              <input
-                type="text"
-                id="firstName"
-                ref={firstNameRef}
-                placeholder="First name"
-              />
-              <input
-                type="text"
-                id="lastName"
-                ref={lastNameRef}
-                placeholder="Last name"
-              />
-            </div>
-            <input
-              type="email"
-              id="email"
-              ref={emailRef}
-              placeholder="E-mail"
-            />
-            <input
-              type="password"
-              id="password"
-              ref={passwordRef}
-              placeholder="Password"
-            />
-            <div>
-              <div className="form_birth_container">
-                <span>Birth date</span>
-                <div className="form_birth">
-                  <select id="day" ref={dayRef}>
-                    {dayList()}
-                  </select>
-                  <select id="month" ref={monthRef}>
-                    {monthList()}
-                  </select>
-                  <select id="year" ref={yearRef}>
-                    {yearList()}
-                  </select>
-                </div>
+      <main className="register">
+        <div className="overlay">
+          <div className="modal_container" id="modal">
+            <div className="modal_header">
+              <div className="modal_title">
+                <h3>Registering</h3>
               </div>
-              <div className="form_gender_container">
-                <span>Gender</span>
-                <div className="form_gender">
-                  <div>
-                    <p>Woman</p>
-                    <input
-                      type="radio"
-                      name="gender"
-                      id=""
-                      onClick={() => setChecked(false)}
-                    />
-                  </div>
-                  <div>
-                    <p>Man</p>
-                    <input
-                      type="radio"
-                      name="gender"
-                      id=""
-                      onClick={() => setChecked(false)}
-                    />
-                  </div>
-                  <div>
-                    <p>Personalized</p>
-                    <input
-                      type="radio"
-                      name="gender"
-                      id=""
-                      onClick={() => setChecked(true)}
-                    />
-                  </div>
-                </div>
-                {checked && (
-                  <div className="gender_select">
-                    <select name="" id="">
-                      <option selected="1" disabled="1">
-                        Select your pronoun
-                      </option>
-                      {pronounList()}
+              <p>It's fast and easy</p>
+            </div>
+            <form className="register_form" onSubmit={handleSubmit}>
+              <div className="form_names">
+                <input
+                  type="text"
+                  id="firstName"
+                  ref={firstNameRef}
+                  placeholder="First name"
+                />
+                <input
+                  type="text"
+                  id="lastName"
+                  ref={lastNameRef}
+                  placeholder="Last name"
+                />
+              </div>
+              <input
+                type="email"
+                id="email"
+                ref={emailRef}
+                placeholder="E-mail"
+              />
+              <input
+                type="password"
+                id="password"
+                ref={passwordRef}
+                placeholder="Password"
+              />
+              <div>
+                <div className="form_birth_container">
+                  <span>Birth date</span>
+                  <div className="form_birth">
+                    <select id="day" ref={dayRef}>
+                      {dayList()}
                     </select>
-                    <input
-                      type="text"
-                      name=""
-                      id=""
-                      placeholder="Gender (optional)"
-                    />
+                    <select id="month" ref={monthRef}>
+                      {monthList()}
+                    </select>
+                    <select id="year" ref={yearRef}>
+                      {yearList()}
+                    </select>
                   </div>
-                )}
+                </div>
+                <div className="form_gender_container">
+                  <span>Gender</span>
+                  <div className="form_gender">
+                    <div>
+                      <p>Woman</p>
+                      <input
+                        type="radio"
+                        name="gender"
+                        id=""
+                        onClick={() => setChecked(false)}
+                      />
+                    </div>
+                    <div>
+                      <p>Man</p>
+                      <input
+                        type="radio"
+                        name="gender"
+                        id=""
+                        onClick={() => setChecked(false)}
+                      />
+                    </div>
+                    <div>
+                      <p>Personalized</p>
+                      <input
+                        type="radio"
+                        name="gender"
+                        id=""
+                        onClick={() => setChecked(true)}
+                      />
+                    </div>
+                  </div>
+                  {checked && (
+                    <div className="gender_select">
+                      <select name="" id="">
+                        <option selected="1" disabled="1">
+                          Select your pronoun
+                        </option>
+                        {pronounList()}
+                      </select>
+                      <input
+                        type="text"
+                        name=""
+                        id=""
+                        placeholder="Gender (optional)"
+                      />
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
 
-            <ValidButton href="" message="Register" />
-          </form>
+              <ValidButton href="" message="Register" />
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </main>
+    </>
   );
 }

@@ -20,7 +20,9 @@ export default function Products({ product }: Props) {
   return (
     <div className="card">
       <div className="card_img">
-        <img src={product.pictureUrl} alt="product" />
+        <Link to={`/collection/${product.id}`}>
+          <img src={product.pictureUrl} alt="product" />
+        </Link>
         <button className="card_btn" onClick={() => handleAddItem()}>
           Add to cart
         </button>

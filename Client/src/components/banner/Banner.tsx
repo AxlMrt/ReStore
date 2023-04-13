@@ -8,10 +8,10 @@ interface Props {
 export default function Banner({ name }: Props) {
   
   return (
-    <div className="banner">
+    <section className="banner">
       <h4>
         Home / <span>{name}</span>
       </h4>
-    </div>
+    </section>
   );
 }
