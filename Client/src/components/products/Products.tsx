@@ -11,6 +11,7 @@ interface Props {
 
 export default function Products({ product }: Props) {
   const dispatch = useAppDispatch();
+  const path = window.location.pathname;
 
   function handleAddItem() {
     dispatch(addBasketItemAsync({ productId: product.id }));
@@ -18,7 +19,7 @@ export default function Products({ product }: Props) {
   }
 
   return (
-    <div className="card">
+    <div className={path === '/' ? "card" : "card_collection"}>
       <div className="card_img">
         <Link to={`/collection/${product.id}`}>
           <img src={product.pictureUrl} alt="product" />

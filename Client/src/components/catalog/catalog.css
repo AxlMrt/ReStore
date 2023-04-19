@@ -48,7 +48,8 @@
 .products_container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  margin-left: calc(1.5rem * -.5);
+  margin-right: calc(1.5rem * -.5);
 }
 
 

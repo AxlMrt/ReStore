@@ -1,19 +1,20 @@
-import React from 'react'
+import './sortBy.css';
 
-export default function SortBy() {
-  const sortOptions = [
-    { value: "default", name: "Alphabetical" },
-    { value: "price", name: "Price - Low to High" },
-    { value: "priceDesc", name: "Price - High to Low" },
-  ];
+interface Props {
+  options: any[];
+  onChange: (event: any) => void;
+  selected: string;
+}
 
+export default function SortBy({ options, onChange, selected }: Props) {
+  
   return (
-    <select>
-      {
-        sortOptions.map((option) => {
-          return <option value={option.value}>{option.name}</option>
-        })
-      }
-    </select>
+      <select className='shop_options' onChange={onChange} value={selected}>
+        {
+          options.map((option) => {
+            return <option value={option.value} key={option.value}>{option.name}</option>
+          })
+        }
+      </select>
   )
 }

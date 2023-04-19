@@ -1,0 +1,13 @@
+.sideBar {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .sideBar {
+    display: block;
+  }
+
+  .sideBar h4 {
+    font-weight: 400;
+  }
+}

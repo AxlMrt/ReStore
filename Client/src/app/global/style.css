@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
 *,
 *::before,
@@ -29,11 +29,14 @@
 }
 
 html {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 main {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(1.5rem * 0.5);
+  padding-right: calc(1.5rem * 0.5);
 }
 
 a {
@@ -66,4 +69,28 @@ a {
   border-top: 10px solid var(--loadBlack);
   border-radius: 50%;
   animation: spinner 1.5s linear infinite;
+}
+
+@media screen and (min-width: 576px) {
+  main {
+    max-width: 540px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  main {
+    max-width: 720px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  main {
+    max-width: 960px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    max-width: 1200px;
+  }
 }

@@ -1,12 +1,11 @@
 .collection_container {
-  width: 95%;
   display: flex;
   justify-content: center;
-  margin: 0 auto;
   padding: 6rem 0;
-
 }
 
-.collection_product {
-  padding: 0 2rem;
+@media screen and (min-width: 992px) {
+  .collection_product {
+    padding-left: 2.5rem;
+  }
 }

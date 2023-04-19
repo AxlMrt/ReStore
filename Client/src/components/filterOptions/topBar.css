@@ -1,0 +1,5 @@
+.top_bar {
+  display: inline-flex;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}

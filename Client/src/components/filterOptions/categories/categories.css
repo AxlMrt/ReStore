@@ -1,0 +1,41 @@
+li {
+  list-style: none;
+}
+
+li > button {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0 0 0 30px;
+  position: relative;
+  text-align: left;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+li > button > span {
+  background-color: #fff;
+  border: 2px solid #888;
+  border-radius: 3px;
+  height: 15px;
+  left: 0;
+  position: absolute;
+  width: 15px;
+}
+
+li > button.active > span:after {
+    border: solid #fff;
+    content: "";
+    height: 8px;
+    left: 3px;
+    top: 0;
+    position: absolute;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 5px;
+}
+
+li > button.active > span {
+  background-color: #a749ff;
+    border-color: #a749ff;
+}
