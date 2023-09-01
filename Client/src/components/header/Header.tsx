@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { BiCart } from "react-icons/bi";
 import { useAppSelector } from "../../app/store/configureStore";
+import { BiLogIn } from "react-icons/bi";
+import NavBar from "./navBar/NavBar";
+import CartIcon from "./cartIcon/CartIcon";
 import "./header.css";
 
 export default function Header() {
   const { basket } = useAppSelector((state) => state.basket);
+  const { user } = useAppSelector((state) => state.account);
   const [scroll, setScroll] = useState<boolean>(false);
   const itemCount: number | undefined = basket?.items.reduce(
     (sum, item) => sum + item.quantity,
@@ -17,7 +20,20 @@ export default function Header() {
     { title: "Collection", path: "/collection" },
     { title: "About", path: "/about" },
     { title: "Contact", path: "/contact" },
-    { title: "Login", path: "/login" },
+    {
+      title: <BiLogIn size={20}/>,
+      path: "/login",
+      submenu: [
+        {
+          title: user ? "Profile" : "Login",
+          path: user ? "/profile" : "/login",
+        },
+        {
+          title: user ? "Logout" : "Register",
+          path: user ? "/" : "/register",
+        },
+      ],
+    },
   ];
 
   useEffect(() => {
@@ -33,30 +49,13 @@ export default function Header() {
         <span></span>
       </label>
 
-      <h1>AxlStore</h1>
+      <Link to='/'>
+        <h1>AxlStore</h1>
+      </Link>
 
-      <nav className="menu__box">
-        <div>
-          {navLinks.map((link) => {
-            return (
-              <Link to={link.path} key={link.title} className="menu__item">
-                {link.title}
-              </Link>
-            );
-          })}
-        </div>
-      </nav>
+      <NavBar navLinks={navLinks} />
 
-      <div className="cart_container">
-        <div className="cart">
-          <Link to="/cart" className="cart_icon">
-            <BiCart size={25} />
-          </Link>
-          <div className="cart_num">
-            <span>{itemCount}</span>
-          </div>
-        </div>
-      </div>
+      <CartIcon itemCount={itemCount} />
     </header>
   );
 }

@@ -2,86 +2,36 @@ import Banner from "../../components/banner/Banner";
 import ValidButton from "../../components/buttons/valid-btn/ValidButton";
 import { useState, useRef } from "react";
 import "./register.css";
+import { useAppDispatch } from "../../app/store/configureStore";
+import { useNavigate } from "react-router-dom";
+import agent from "../../app/api/agent";
+import { signInUser } from "../../app/store/slice/accountSlice";
 
 export default function Register() {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  
   const [checked, setChecked] = useState(false);
-  const firstNameRef = useRef();
-  const lastNameRef = useRef();
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const dayRef = useRef();
-  const monthRef = useRef();
-  const yearRef = useRef();
+  const firstNameRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+  const lastNameRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+  const emailRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+  const passwordRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const firstName: string = firstNameRef.current.value;
-    const lastName: string = lastNameRef.current.value;
-    const email: string = emailRef.current.value;
-    const password: string = passwordRef.current.value;
-    const day: number = dayRef.current.value;
-    const month: number = monthRef.current.value;
-    const year: number = yearRef.current.value;
+    agent.Account.login({
+      username: userRef.current.value,
+      password: passwordRef.current.value,
+    });
 
-    console.log(new Date(year, month, day));
-
-    const newUser = {
-      firstName,
-      lastName,
-      email,
-      password,
-      birth: new Date(year, month, day),
-    };
-  };
-
-  const yearList = () => {
-    const year = new Date().getFullYear();
-    return Array.from(new Array(80), (value, index) => (
-      <option key={year + index} value={year - index}>
-        {year - index}
-      </option>
-    ));
-  };
-
-  const monthList = () => {
-    const months = [
-      "january",
-      "february",
-      "march",
-      "april",
-      "may",
-      "june",
-      "july",
-      "august",
-      "september",
-      "october",
-      "november",
-      "december",
-    ];
-
-    return Array.from(new Array(12), (value, index) => (
-      <option key={1 + index} value={index}>
-        {months[index].slice(0, 3)}
-      </option>
-    ));
-  };
-
-  const dayList = () => {
-    const counter = 1;
-    return Array.from(new Array(31), (value, index) => (
-      <option key={counter + index} value={counter + index}>
-        {counter + index}
-      </option>
-    ));
-  };
-
-  const pronounList = () => {
-    const pronoun = ["She", "He", "Neutral"];
-    return Array.from(new Array(3), (value, index) => (
-      <option key={pronoun[index] + index} value={pronoun[index]}>
-        {pronoun[index]}
-      </option>
-    ));
+    await dispatch(
+      signInUser({
+        username: userRef.current.value,
+        password: passwordRef.current.value,
+      })
+    );
+    navigate("/collection");
   };
 
   return (
@@ -123,70 +73,7 @@ export default function Register() {
                 ref={passwordRef}
                 placeholder="Password"
               />
-              <div>
-                <div className="form_birth_container">
-                  <span>Birth date</span>
-                  <div className="form_birth">
-                    <select id="day" ref={dayRef}>
-                      {dayList()}
-                    </select>
-                    <select id="month" ref={monthRef}>
-                      {monthList()}
-                    </select>
-                    <select id="year" ref={yearRef}>
-                      {yearList()}
-                    </select>
-                  </div>
-                </div>
-                <div className="form_gender_container">
-                  <span>Gender</span>
-                  <div className="form_gender">
-                    <div>
-                      <p>Woman</p>
-                      <input
-                        type="radio"
-                        name="gender"
-                        id=""
-                        onClick={() => setChecked(false)}
-                      />
-                    </div>
-                    <div>
-                      <p>Man</p>
-                      <input
-                        type="radio"
-                        name="gender"
-                        id=""
-                        onClick={() => setChecked(false)}
-                      />
-                    </div>
-                    <div>
-                      <p>Personalized</p>
-                      <input
-                        type="radio"
-                        name="gender"
-                        id=""
-                        onClick={() => setChecked(true)}
-                      />
-                    </div>
-                  </div>
-                  {checked && (
-                    <div className="gender_select">
-                      <select name="" id="">
-                        <option selected="1" disabled="1">
-                          Select your pronoun
-                        </option>
-                        {pronounList()}
-                      </select>
-                      <input
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="Gender (optional)"
-                      />
-                    </div>
-                  )}
-                </div>
-              </div>
+
 
               <ValidButton href="" message="Register" />
             </form>

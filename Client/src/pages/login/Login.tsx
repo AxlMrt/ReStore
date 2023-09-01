@@ -1,17 +1,31 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import "./login.css";
+import { useAppDispatch } from "../../app/store/configureStore";
+import { signInUser } from "../../app/store/slice/accountSlice";
 import Banner from "../../components/banner/Banner";
+import agent from "../../app/api/agent";
+import "./login.css";
 
 export default function Login() {
-  const [openModal, setOpenModal] = useState(false);
-  const emailRef = useRef();
-  const passwordRef = useRef();
+  const userRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+  const passwordRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    navigate("/home");
+    agent.Account.login({
+      username: userRef.current.value,
+      password: passwordRef.current.value,
+    });
+
+    await dispatch(
+      signInUser({
+        username: userRef.current.value,
+        password: passwordRef.current.value,
+      })
+    );
+    navigate("/collection");
   };
 
   return (
@@ -21,15 +35,13 @@ export default function Login() {
         <div className="login_card">
           <form action="" className="login_form" onSubmit={handleSubmit}>
             <input
-              type="email"
-              id="email"
-              ref={emailRef}
+              type="text"
+              ref={userRef}
               placeholder="Adresse e-mail"
               required
             />
             <input
               type="password"
-              id="password"
               ref={passwordRef}
               placeholder="Mot de passe"
               required
@@ -41,7 +53,7 @@ export default function Login() {
           <button
             type="button"
             id="login_modal"
-            onClick={() => setOpenModal(!openModal)}
+            onClick={() => navigate("/register")}
           >
             Créer nouveau compte
           </button>

@@ -47,8 +47,7 @@
 }
 
 .register_form > input,
-.form_names > input,
-.gender_select > input {
+.form_names > input {
   width: 100%;
   background: var(--bg);
   border: 1px solid var(--borderInput);
@@ -56,51 +55,4 @@
   padding: .7rem;
   font-size: 1rem;
   line-height: 1rem;
-}
-
-.form_gender_container {
-  margin: .6rem 0;
-}
-
-.form_birth_container > span,
-.form_gender_container > span {
-  color: var(--text);
-  font-size: .75rem;
-}
-
-.form_birth {
-  display: flex;
-  gap: .5rem;
-}
-
-.form_birth > select,
-.form_gender > div,
-.gender_select > select {
-  height: 2.25rem;
-  width: 100%;
-  background: white;
-  border: 1px solid var(--borderInput);
-  border-radius: .25rem;
-  font-size: 1rem;
-  line-height: 1rem;
-}
-
-.form_gender {
-  display: flex;
-  gap: .5rem;
-}
-
-.form_gender > div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 .5rem;
-  gap: 1rem;
-}
-
-.gender_select {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1rem;
-  gap: 1rem;
 }

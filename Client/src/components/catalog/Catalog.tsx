@@ -1,6 +1,6 @@
 import { Product } from "../../app/models/product";
 import { useAppSelector } from "../../app/store/configureStore";
-import Products from "../products/Products";
+import Products from "./products/Products";
 import Skeleton from "../skeleton/Skeleton";
 import "./catalog.css";
 

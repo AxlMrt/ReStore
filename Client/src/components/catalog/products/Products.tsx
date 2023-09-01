@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { Product } from "../../app/models/product";
+import { Product } from "../../../app/models/product";
 import { toast } from "react-toastify";
-import { useAppDispatch } from "../../app/store/configureStore";
-import { addBasketItemAsync } from "../../app/store/slice/basketSlice";
+import { useAppDispatch } from "../../../app/store/configureStore";
+import { addBasketItemAsync } from "../../../app/store/slice/basketSlice";
 import "./products.css";
 
 interface Props {
